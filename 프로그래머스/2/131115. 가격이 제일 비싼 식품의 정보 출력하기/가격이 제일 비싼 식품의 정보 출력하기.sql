@@ -1,0 +1,9 @@
+-- 코드를 입력하세요
+SELECT 
+    * 
+FROM 
+    FOOD_PRODUCT 
+WHERE 1 = 1
+ORDER BY
+    PRICE DESC
+LIMIT 1
