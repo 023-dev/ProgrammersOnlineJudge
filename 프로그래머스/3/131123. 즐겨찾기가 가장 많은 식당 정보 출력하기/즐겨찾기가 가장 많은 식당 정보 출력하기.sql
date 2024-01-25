@@ -1,0 +1,20 @@
+SELECT 
+    T2.FOOD_TYPE
+    , T2.REST_ID
+    , T2.REST_NAME
+    , T2.FAVORITES
+FROM
+    (
+        SELECT 
+            FOOD_TYPE,
+            MAX(FAVORITES) AS FAVORITES
+        FROM 
+            REST_INFO 
+        GROUP BY 
+            FOOD_TYPE
+    ) T1 
+    INNER JOIN REST_INFO T2 
+    ON T1.FAVORITES = T2.FAVORITES 
+    AND T1.FOOD_TYPE = T2.FOOD_TYPE 
+ORDER BY 
+    FOOD_TYPE DESC;
